@@ -753,7 +753,7 @@ class Collections:
 		control.content(syshandle, 'movies')
 		control.directory(syshandle, cacheToDisc=True)
 		control.sleep(100)
-		views.setView('movies', {'skin.estuary': 55, 'skin.confluence': 500})
+		views.setView('movies', {'skin.estuary': 54, 'skin.confluence': 500})
 
 	def addDirectoryItem(self, name, action, poster, icon, fanart=None, context=None, queue=False):
 		try:

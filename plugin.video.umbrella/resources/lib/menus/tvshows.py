@@ -1455,7 +1455,7 @@ class TVshows:
 				log_utils.error()
 		control.content(syshandle, 'tvshows')
 		control.directory(syshandle, cacheToDisc=False) # disable cacheToDisc so unwatched counts loads fresh data counts if changes made
-		views.setView('tvshows', {'skin.estuary': 55, 'skin.confluence': 500})
+		views.setView('tvshows', {'skin.estuary': 54, 'skin.confluence': 500})
 
 	def addDirectory(self, items, queue=False):
 		from sys import argv # some functions like ActivateWindow() throw invalid handle less this is imported here.

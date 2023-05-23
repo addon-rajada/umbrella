@@ -76,3 +76,28 @@ control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
 No arquivo router.py
 
 Nas actions **play_Item** e **play**, comentar tudo
+
+---
+
+## View Mode
+
+Nos arquivos:
+
+- collections.py
+- movies.py
+- tvshows.py
+
+Trocar opção de view na chamada **views.setView** para estuary e confluence
+
+```
+50 List
+51 Poster
+52 IconWall
+53 Shift
+54 InfoWall
+55 WideList
+500 Wall
+501 Banner
+502 FanArt
+503 NowPlaying
+```

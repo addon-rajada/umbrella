@@ -1857,7 +1857,7 @@ class Movies:
 		control.content(syshandle, 'movies')
 		control.directory(syshandle, cacheToDisc=True)
 		control.sleep(200)
-		views.setView('movies', {'skin.estuary': 55, 'skin.confluence': 500})
+		views.setView('movies', {'skin.estuary': 54, 'skin.confluence': 500})
 
 	def addDirectory(self, items, queue=False):
 		from sys import argv # some functions like ActivateWindow() throw invalid handle less this is imported here.
