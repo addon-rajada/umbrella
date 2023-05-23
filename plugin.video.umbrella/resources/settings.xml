@@ -170,7 +170,7 @@
 				</setting>
 				<setting id="api.language" type="string" label="32316" help="">
 					<level>0</level>
-					<default>English</default>
+					<default>Portuguese</default>
 					<constraints>
 						<options>
 							<option>AUTO</option>
@@ -212,7 +212,7 @@
 				</setting>
 				<setting id="mpa.country" type="string" label="32391" help="">
 					<level>0</level>
-					<default>United States</default>
+					<default>Brazil</default>
 					<constraints>
 						<options>
 							<option>Australia</option>
@@ -313,10 +313,10 @@
 				</setting>
 				<setting id="page.item.limit" type="integer" label="32011" help="">
 					<level>0</level>
-					<default>20</default>
+					<default>40</default>
 					<constraints>
 						<minimum>10</minimum>
-						<maximum>60</maximum>
+						<maximum>100</maximum>
 					</constraints>
 					<control type="slider" format="integer">
 						<popup>false</popup>
@@ -324,7 +324,7 @@
 				</setting>
 				<setting id="search.page.limit" type="integer" label="32167" help="">
 					<level>0</level>
-					<default>20</default>
+					<default>40</default>
 					<constraints>
 						<minimum>10</minimum>
 						<maximum>100</maximum>
@@ -340,7 +340,7 @@
 				</setting>
 				<setting id="enable.fanarttv" type="boolean" label="32012" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="showHelpEnableFanart" type="action" label="32137" help="">
@@ -381,7 +381,7 @@
 				</setting>
 				<setting id="tmdb.imageResolutions" type="integer" label="32233" help="">
 					<level>0</level>
-					<default>1</default>
+					<default>0</default>
 					<constraints>
 						<options>
 							<option label="32234">0</option>
@@ -701,7 +701,7 @@
 				</setting>
 				<setting id="mylists.widget" type="boolean" label="32329" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.anime" type="boolean" label="40068" help="">
@@ -711,12 +711,12 @@
 				</setting>
 				<setting id="navi.youtube" type="boolean" label="40061" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.prem.services" type="boolean" label="40060" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.alldebrid" type="boolean" label="32223" help="" parent="navi.prem.services">
@@ -771,12 +771,12 @@
 				</setting>
 				<setting id="navi.news" type="boolean" label="32013" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.changelog" type="boolean" label="32014" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -790,22 +790,22 @@
 				</setting>
 				<setting id="navi.movie.tmdb.nowplaying" type="boolean" label="32423" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.comingsoon" type="boolean" label="32215" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.anticipated" type="boolean" label="32425" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.tmdb.upcoming" type="boolean" label="32427" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.popular" type="boolean" label="32429" help="">
@@ -820,27 +820,27 @@
 				</setting>
 				<setting id="navi.movie.tmdb.discoverreleased" type="boolean" label="40268" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.popular" type="boolean" label="32433" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.boxoffice" type="boolean" label="32435" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.tmdb.boxoffice" type="boolean" label="32436" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.boxoffice" type="boolean" label="32437" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.mostvoted" type="boolean" label="32439" help="">
@@ -860,22 +860,22 @@
 				</setting>
 				<setting id="navi.movie.trakt.trendingrecent" type="boolean" label="40388" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.lib.recommended" type="boolean" label="40393" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.lib.similar" type="boolean" label="40392" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.simkl.trendingtoday" type="boolean" label="40350" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.simkl.trendingweek" type="boolean" label="40352" help="">
@@ -890,32 +890,32 @@
 				</setting>
 				<setting id="navi.movie.tmdb.trendingday" type="boolean" label="40330" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.tmdb.trendingweek" type="boolean" label="40331" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.recommended" type="boolean" label="32445" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.recentlywatched" type="boolean" label="40255" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.traktsimilar" type="boolean" label="40260" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.featured" type="boolean" label="32447" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.oscarwinners" type="boolean" label="32452" help="">
@@ -925,7 +925,7 @@
 				</setting>
 				<setting id="navi.movie.imdb.oscarnominees" type="boolean" label="32454" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.genres" type="boolean" label="32456" help="">
@@ -935,7 +935,7 @@
 				</setting>
 				<setting id="navi.movie.tmdb.genres" type="boolean" label="32486" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.years" type="boolean" label="32458" help="">
@@ -945,27 +945,27 @@
 				</setting>
 				<setting id="navi.movie.tmdb.years" type="boolean" label="32485" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.people" type="boolean" label="32460" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.languages" type="boolean" label="32462" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.imdb.certificates" type="boolean" label="32464" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.tmdb.certificates" type="boolean" label="32487" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.collections" type="boolean" label="32000" help="">
@@ -985,27 +985,27 @@
 				</setting>
 				<setting id="navi.movie.mdblist.topList" type="boolean" label="40089" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.mdblist.userList" type="boolean" label="40090" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.popularList" type="boolean" label="32417" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.trendingList" type="boolean" label="32418" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.movie.trakt.searchList" type="boolean" label="32419" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -1014,7 +1014,7 @@
 			<group id="1" label="32002">
 				<setting id="navi.originals" type="boolean" label="40069" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.popular" type="boolean" label="32429" help="">
@@ -1029,7 +1029,7 @@
 				</setting>
 				<setting id="navi.tv.trakt.popular" type="boolean" label="32433" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.mostvoted" type="boolean" label="32439" help="">
@@ -1049,12 +1049,12 @@
 				</setting>
 				<setting id="navi.tv.trakt.trendingrecent" type="boolean" label="40388" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.simkl.trendingtoday" type="boolean" label="40350" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.simkl.trendingweek" type="boolean" label="40352" help="">
@@ -1069,22 +1069,22 @@
 				</setting>
 				<setting id="navi.tv.tmdb.trendingday" type="boolean" label="40330" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.tmdb.trendingweek" type="boolean" label="40331" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.trakt.recentlywatched" type="boolean" label="40255" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.trakt.traktsimilar" type="boolean" label="40260" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.highlyrated" type="boolean" label="32449" help="">
@@ -1094,7 +1094,7 @@
 				</setting>
 				<setting id="navi.tv.trakt.recommended" type="boolean" label="32445" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.genres" type="boolean" label="32456" help="">
@@ -1104,22 +1104,22 @@
 				</setting>
 				<setting id="navi.tv.tmdb.genres" type="boolean" label="32486" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.tvmaze.networks" type="boolean" label="32470" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.languages" type="boolean" label="32462" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.certificates" type="boolean" label="32464" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.years" type="boolean" label="32458" help="">
@@ -1129,62 +1129,62 @@
 				</setting>
 				<setting id="navi.tv.tmdb.years" type="boolean" label="32485" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.tmdb.airingtoday" type="boolean" label="32467" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.airingtoday" type="boolean" label="32466" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.tmdb.ontv" type="boolean" label="32472" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.returningtvshows" type="boolean" label="32474" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.imdb.newtvshows" type="boolean" label="32476" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.tvmaze.calendar" type="boolean" label="32450" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.mdblist.topList" type="boolean" label="40089" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.mdblist.userList" type="boolean" label="40090" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.trakt.popularList" type="boolean" label="32417" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.trakt.trendingList" type="boolean" label="32418" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="navi.tv.trakt.searchList" type="boolean" label="32419" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 			</group>
@@ -5724,7 +5724,7 @@
 			<group id="1">
 				<setting id="debug.enabled" type="boolean" label="32374" help="">
 					<level>0</level>
-					<default>false</default>
+					<default>true</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="debug.level" type="integer" label="35528" help="">

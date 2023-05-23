@@ -633,7 +633,7 @@ class Navigator:
 			if isSearch: cm.append(('Clear Search Phrase', 'RunPlugin(plugin://plugin.video.umbrella/?action=cache_clearSearchPhrase&source=%s&name=%s)' % (table, quote_plus(name))))
 			cm.append(('[COLOR red]Umbrella Settings[/COLOR]', 'RunPlugin(plugin://plugin.video.umbrella/?action=tools_openSettings)'))
 			item = control.item(label=name, offscreen=True)
-			item.addContextMenuItems(cm)
+			#item.addContextMenuItems(cm)
 			if isPlayable: item.setProperty('IsPlayable', 'true')
 			item.setArt({'icon': icon, 'poster': poster, 'thumb': poster, 'fanart': control.addonFanart(), 'banner': poster})
 			#item.setInfo(type='video', infoLabels={'plot': name}) #k20setinfo

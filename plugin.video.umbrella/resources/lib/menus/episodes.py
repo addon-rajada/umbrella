@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from json import dumps as jsdumps, loads as jsloads
 import re
 from threading import Thread
-from urllib.parse import quote_plus, urlencode, parse_qsl, urlparse, urlsplit
+from urllib.parse import quote_plus, quote, urlencode, parse_qsl, urlparse, urlsplit
 from resources.lib.database import cache, fanarttv_cache, traktsync
 from resources.lib.indexers.tmdb import TVshows as tmdb_indexer
 from resources.lib.indexers.fanarttv import FanartTv
@@ -888,9 +888,10 @@ class Episodes:
 				for k in ('metacache', 'poster2', 'poster3', 'fanart2', 'fanart3', 'banner2', 'banner3', 'trailer'): meta.pop(k, None)
 				meta.update({'poster': poster, 'fanart': fanart, 'banner': banner, 'thumb': thumb, 'icon': icon})
 				sysmeta, sysart, syslabelProgress = quote_plus(jsdumps(meta)), quote_plus(jsdumps(art)), quote_plus(labelProgress)
-				url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
-										sysaddon, systitle, year, imdb, tmdb, tvdb, season, episode, systvshowtitle, syspremiered, sysmeta)
-				sysurl = quote_plus(url)
+				#url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&season=%s&episode=%s&tvshowtitle=%s&premiered=%s&meta=%s' % (
+				#						sysaddon, systitle, year, imdb, tmdb, tvdb, season, episode, systvshowtitle, syspremiered, sysmeta)
+				url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (tvshowtitle, year))))
+				sysurl = quote(url)
 ####-Context Menu and Overlays-####
 				cm = []
 				try:
@@ -1009,7 +1010,7 @@ class Episodes:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=isFolder)
 			except:
 				from resources.lib.modules import log_utils
@@ -1075,7 +1076,7 @@ class Episodes:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
 			except:
 				from resources.lib.modules import log_utils

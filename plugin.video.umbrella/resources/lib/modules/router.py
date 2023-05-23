@@ -3,9 +3,10 @@
 	Umbrella Add-on
 """
 
-from urllib.parse import quote_plus, parse_qsl
+from urllib.parse import quote_plus, quote, parse_qsl
 from resources.lib.modules import control
-
+import xbmc
+import xbmcgui
 
 def router(argv2):
 	try:
@@ -737,8 +738,19 @@ def router(argv2):
 	elif action and action.startswith('play_'):
 		#control.checkPlayNextEpisodes()
 		if action == 'play_Item':
-			from resources.lib.modules import sources
-			sources.Sources(params.get('all_providers')).play(title, year, imdb, tmdb, tvdb, season, episode, tvshowtitle, params.get('premiered'), params.get('meta'), params.get('select'), params.get('rescrape'))
+			#from resources.lib.modules import sources
+			#from resources.lib.modules import log_utils
+			#from resources.lib.modules import player
+			#sources.Sources(params.get('all_providers')).play(title, year, imdb, tmdb, tvdb, season, episode, tvshowtitle, params.get('premiered'), params.get('meta'), params.get('select'), params.get('rescrape'))
+			#elementum_url = "plugin://plugin.video.elementum/context/media/%s/%s/play" % ("movie", quote_plus("%s %s" % (title if title else tvshowtitle, year)))
+			#elementum_url = "plugin://plugin.video.elementum/context/media/%s/%s/play" % ("movie", quote("%s %s" % (xbmc.getInfoLabel('ListItem.Title') if xbmc.getInfoLabel('ListItem.Title') else xbmc.getInfoLabel('ListItem.TVSHowTitle'), year)))
+			#xbmcgui.Dialog().notification("Elementum", "%s %s" % (title if title else tvshowtitle, year), xbmcgui.NOTIFICATION_INFO, 3000)
+			#xbmc.Player().play(elementum_url)
+			#log_utils.error('play_ elementum_url: %s' % elementum_url, __name__)
+			#xbmc.log('play_ elementum_url: %s' % elementum_url, level=xbmc.LOGERROR)
+			#return player.Player().play(elementum_url)
+			#xbmc.executebuiltin('PlayMedia({})'.format(elementum_url))
+			None
 		elif action == "play_preScrapeNext":
 			from resources.lib.modules.player import PlayNext
 			PlayNext().prescrapeNext()
@@ -838,8 +850,16 @@ def router(argv2):
 			except: control.notification(message=32537)
 
 	elif action == 'play': # for support of old style .strm library files
-		from resources.lib.modules import sources
-		sources.Sources(params.get('all_providers')).play(title, year, imdb, tmdb, tvdb, season, episode, tvshowtitle, params.get('premiered'), params.get('meta'), params.get('select'), params.get('rescrape'))
+		#from resources.lib.modules import sources
+		#from resources.lib.modules import log_utils
+		#from resources.lib.modules import player
+		#sources.Sources(params.get('all_providers')).play(title, year, imdb, tmdb, tvdb, season, episode, tvshowtitle, params.get('premiered'), params.get('meta'), params.get('select'), params.get('rescrape'))
+		#elementum_url = "plugin://plugin.video.elementum/context/media/%s/%s/play" % ("movie", quote("%s %s" % (xbmc.getInfoLabel('ListItem.Title') if xbmc.getInfoLabel('ListItem.Title') else xbmc.getInfoLabel('ListItem.TVSHowTitle'), year)))
+		#xbmcgui.Dialog().notification("Elementum", "%s %s" % (title if title else tvshowtitle, year), xbmcgui.NOTIFICATION_INFO, 3000)
+		#xbmc.Player().play(elementum_url)
+		#xbmc.log('play elementum_url: %s' % elementum_url, level=xbmc.LOGERROR)
+		#return player.Player().play(elementum_url)
+		None
 
 	####################################################
 	#---Playlist

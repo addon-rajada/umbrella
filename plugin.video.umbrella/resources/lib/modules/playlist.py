@@ -88,7 +88,7 @@ def playlistAdd(name, url, meta, art):
 	#item.setInfo(type='video', infoLabels=control.metadataClean(meta))
 	control.set_info(item, meta)
 	cm = []
-	item.addContextMenuItems(cm)
+	#item.addContextMenuItems(cm)
 	playlist().add(url=url, listitem=item)
 	if notification: control.notification(title=35522, message=control.lang(32121) % str(name))
 

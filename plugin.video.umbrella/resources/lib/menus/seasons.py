@@ -254,7 +254,7 @@ class Seasons:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
 			except:
 				from resources.lib.modules import log_utils

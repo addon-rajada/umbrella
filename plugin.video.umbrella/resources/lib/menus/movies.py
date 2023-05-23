@@ -8,7 +8,7 @@ from json import dumps as jsdumps, loads as jsloads
 import re
 import xbmc
 from threading import Thread
-from urllib.parse import quote_plus, urlencode, parse_qsl, urlparse, urlsplit
+from urllib.parse import quote_plus, quote, urlencode, parse_qsl, urlparse, urlsplit
 from resources.lib.database import cache, metacache, fanarttv_cache, traktsync
 from resources.lib.indexers.tmdb import Movies as tmdb_indexer
 from resources.lib.indexers.fanarttv import FanartTv
@@ -766,7 +766,7 @@ class Movies:
 		languages = [('Arabic', 'ar'), ('Bosnian', 'bs'), ('Bulgarian', 'bg'), ('Chinese', 'zh'), ('Croatian', 'hr'), ('Dutch', 'nl'),
 			('English', 'en'), ('Finnish', 'fi'), ('French', 'fr'), ('German', 'de'), ('Greek', 'el'),('Hebrew', 'he'), ('Hindi ', 'hi'),
 			('Hungarian', 'hu'), ('Icelandic', 'is'), ('Italian', 'it'), ('Japanese', 'ja'), ('Korean', 'ko'), ('Macedonian', 'mk'),
-			('Norwegian', 'no'), ('Persian', 'fa'), ('Polish', 'pl'), ('Portuguese', 'pt'), ('Punjabi', 'pa'), ('Romanian', 'ro'),
+			('Norwegian', 'no'), ('Persian', 'fa'), ('Polish', 'pl'), ('Portuguese', 'pt-BR'), ('Punjabi', 'pa'), ('Romanian', 'ro'),
 			('Russian', 'ru'), ('Serbian', 'sr'), ('Slovenian', 'sl'), ('Spanish', 'es'), ('Swedish', 'sv'), ('Turkish', 'tr'), ('Ukrainian', 'uk')]
 		for i in languages:
 			self.list.append({'content': 'countries', 'name': str(i[0]), 'url': self.language_link % i[1], 'image': 'languages.png', 'icon': 'DefaultAddonLanguage.png', 'action': 'movies'})
@@ -1757,8 +1757,9 @@ class Movies:
 				for k in ('metacache', 'poster2', 'poster3', 'fanart2', 'fanart3', 'banner2', 'banner3', 'trailer'): meta.pop(k, None)
 				meta.update({'poster': poster, 'fanart': fanart, 'banner': banner})
 				sysmeta, sysart = quote_plus(jsdumps(meta)), quote_plus(jsdumps(art))
-				url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, sysmeta)
-				sysurl = quote_plus(url)
+				#url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, sysmeta)
+				url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
+				sysurl = quote(url)
 ####-Context Menu and Overlays-####
 				cm = []
 				try:
@@ -1797,7 +1798,7 @@ class Movies:
 ####################################
 				if trailer: meta.update({'trailer': trailer}) # removed temp so it's not passed to CM items, only infoLabels for skin
 				else: meta.update({'trailer': '%s?action=play_Trailer&type=%s&name=%s&year=%s&imdb=%s' % (sysaddon, 'movie', sysname, year, imdb)})
-				item = control.item(label=labelProgress, offscreen=True)
+				item = control.item(label=labelProgress, offscreen=False)
 				#if 'castandart' in i: item.setCast(i['castandart'])#changed for kodi20 setinfo method
 				if 'castandart' in i: meta.update({'castandart':i['castandart']})
 				item.setArt(art)
@@ -1805,7 +1806,7 @@ class Movies:
 				setUniqueIDs = {'imdb': imdb, 'tmdb': tmdb}
 				item.setProperty('IsPlayable', 'true')
 				if is_widget: 
-					item.setProperty('isUmbrella_widget', 'true')
+					#item.setProperty('isUmbrella_widget', 'true')
 					if self.hide_watched_in_widget and str(xbmc.getInfoLabel("Window.Property(xmlfile)")) != 'Custom_1114_Search.xml':
 						if str(meta.get('playcount', 0)) == '1':
 							continue
@@ -1825,7 +1826,7 @@ class Movies:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
 			except:
 				from resources.lib.modules import log_utils
@@ -1908,7 +1909,7 @@ class Movies:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
 			except:
 				from resources.lib.modules import log_utils

@@ -382,6 +382,7 @@ class Sources:
 			action, chosen_source = window.run()
 			del window
 			if action == 'play_Item' and self.uncached_chosen != True:
+				#None
 				return self.playItem(title, items, chosen_source.getProperty('umbrella.source_dict'), self.meta)
 			else:
 				control.cancelPlayback()

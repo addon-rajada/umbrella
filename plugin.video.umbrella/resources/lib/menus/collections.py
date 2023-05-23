@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from json import dumps as jsdumps
 import re
 from threading import Thread
-from urllib.parse import quote_plus, parse_qsl, urlparse
+from urllib.parse import quote_plus, quote, parse_qsl, urlparse
 from resources.lib.database import cache, metacache, fanarttv_cache
 from resources.lib.indexers.tmdb import Movies as tmdb_indexer
 from resources.lib.indexers.fanarttv import FanartTv
@@ -659,8 +659,9 @@ class Collections:
 				for k in ('metacache', 'poster2', 'poster3', 'fanart2', 'fanart3', 'banner2', 'banner3', 'trailer'): meta.pop(k, None)
 				meta.update({'poster': poster, 'fanart': fanart, 'banner': banner})
 				sysmeta, sysart = quote_plus(jsdumps(meta)), quote_plus(jsdumps(art))
-				url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, sysmeta)
-				sysurl = quote_plus(url)
+				#url = '%s?action=play_Item&title=%s&year=%s&imdb=%s&tmdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, sysmeta)
+				url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
+				sysurl = quote(url)
 ####-Context Menu and Overlays-####
 				cm = []
 				try:
@@ -724,7 +725,7 @@ class Collections:
 				if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 					pass
 				else:
-					item.addContextMenuItems(cm)
+					None #item.addContextMenuItems(cm)
 				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
 			except:
 				from resources.lib.modules import log_utils
@@ -778,7 +779,7 @@ class Collections:
 			if is_widget and control.getKodiVersion() > 19.5 and self.useFullContext != True:
 				pass
 			else:
-				item.addContextMenuItems(cm)
+				None #item.addContextMenuItems(cm)
 			control.addItem(handle=int(argv[1]), url=url, listitem=item, isFolder=True)
 		except:
 			from resources.lib.modules import log_utils

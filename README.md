@@ -54,7 +54,9 @@ Nos arquivos:
 
 trocar a URL padrão dos itens pela URL do elementum:
 
+```python
 url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
+```
 
 em sysurl, usar quote() ao invés de quote_plus(). necessário o import
 
@@ -64,8 +66,10 @@ usar url modificada na chamada **control.addItem**
 
 No arquivo tvshows.py, adicionar os comandos para item
 
-- item.setProperty('IsPlayable', 'true')
-- control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
+```python
+item.setProperty('IsPlayable', 'true')
+control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
+```
 
 ---
 

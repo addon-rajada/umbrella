@@ -436,7 +436,7 @@ class Player(xbmc.Player):
 							# 	info_tag = item.getVideoInfoTag()
 							# 	info_tag.addVideoStream()
 							cm = []
-							item.addContextMenuItems(cm)
+							#item.addContextMenuItems(cm)
 							#item.setInfo("video", info)
 							control.set_info(item, info, setUniqueIDs=setUniqueIDs)
 							item.setArt(art)
