@@ -1,1 +1,1 @@
-zip -r -u -9 -T docs/plugin.video.umbrella-6.6.22.br.zip plugin.video.umbrella/
+zip -r -u -9 -T docs/plugin.video.umbrella-6.6.22.br.zip plugin.video.umbrella/ -x "plugin.video.umbrella/resources/skins/*"
