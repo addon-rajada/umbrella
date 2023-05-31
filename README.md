@@ -101,3 +101,9 @@ Trocar opção de view na chamada **views.setView** para estuary e confluence
 502 FanArt
 503 NowPlaying
 ```
+
+---
+
+## Skins
+
+remover pasta /resources/skins/ na geração do arquivo zip
