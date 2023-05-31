@@ -313,7 +313,7 @@
 				</setting>
 				<setting id="page.item.limit" type="integer" label="32011" help="">
 					<level>0</level>
-					<default>40</default>
+					<default>60</default>
 					<constraints>
 						<minimum>10</minimum>
 						<maximum>100</maximum>
@@ -324,7 +324,7 @@
 				</setting>
 				<setting id="search.page.limit" type="integer" label="32167" help="">
 					<level>0</level>
-					<default>40</default>
+					<default>60</default>
 					<constraints>
 						<minimum>10</minimum>
 						<maximum>100</maximum>

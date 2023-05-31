@@ -1805,6 +1805,7 @@ class Movies:
 				#item.setUniqueIDs({'imdb': imdb, 'tmdb': tmdb})#changed for kodi20 setinfo method
 				setUniqueIDs = {'imdb': imdb, 'tmdb': tmdb}
 				item.setProperty('IsPlayable', 'true')
+				item.setProperty('ForceResolvePlugin', 'true')
 				if is_widget: 
 					#item.setProperty('isUmbrella_widget', 'true')
 					if self.hide_watched_in_widget and str(xbmc.getInfoLabel("Window.Property(xmlfile)")) != 'Custom_1114_Search.xml':

@@ -48,7 +48,7 @@ Alterar name, provider-name, summary, description e news
 Nos arquivos:
 
 - collections.py, função movieDirectory
-- tvshows.py, função tvshowDirectory
+- tvshows.py, função tvshowDirectory (não precisa se tiver o menu de contexto)
 - episodes.py, função episodeDirectory
 - movies.py, função movieDirectory
 
@@ -68,6 +68,7 @@ No arquivo tvshows.py, adicionar os comandos para item
 
 ```python
 item.setProperty('IsPlayable', 'true')
+item.setProperty('ForceResolvePlugin', 'true')
 control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
 ```
 

@@ -1358,11 +1358,11 @@ class TVshows:
 				meta.update({'poster': poster, 'fanart': fanart, 'banner': banner, 'thumb': thumb, 'icon': icon})
 				sysmeta, sysart = quote_plus(jsdumps(meta)), quote_plus(jsdumps(art))
 				if flatten:
-					#url = '%s?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, tvdb, sysmeta)
-					url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
+					url = '%s?action=episodes&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&meta=%s' % (sysaddon, systitle, year, imdb, tmdb, tvdb, sysmeta)
+					#url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
 				else:
-					#url = '%s?action=seasons&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&art=%s' % (sysaddon, systitle, year, imdb, tmdb, tvdb, sysart)
-					url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
+					url = '%s?action=seasons&tvshowtitle=%s&year=%s&imdb=%s&tmdb=%s&tvdb=%s&art=%s' % (sysaddon, systitle, year, imdb, tmdb, tvdb, sysart)
+					#url = "plugin://plugin.video.elementum" + quote("/context/media/%s/%s/play" % ("movie", ("%s %s" % (title, year))))
 
 ####-Context Menu and Overlays-####
 				cm = []
@@ -1391,7 +1391,8 @@ class TVshows:
 				#if 'castandart' in i: item.setCast(i['castandart'])
 				if 'castandart' in i: meta.update({"cast": ['castandart']}) #changed for kodi20 setinfo method
 				item.setArt(art)
-				item.setProperty('IsPlayable', 'true')
+				#item.setProperty('IsPlayable', 'true')
+				item.setProperty('ForceResolvePlugin', 'true')
 				try: 
 					count = getShowCount(indicators[1], imdb, tvdb) if indicators else None # if indicators and no matching imdb_id in watched items then it returns None and we use TMDb meta to avoid Trakt request
 					if count:
@@ -1421,8 +1422,8 @@ class TVshows:
 					pass
 				else:
 					None #item.addContextMenuItems(cm)
-				#control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
-				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
+				control.addItem(handle=syshandle, url=url, listitem=item, isFolder=True)
+				#control.addItem(handle=syshandle, url=url, listitem=item, isFolder=False)
 			except:
 				from resources.lib.modules import log_utils
 				log_utils.error()

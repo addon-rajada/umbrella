@@ -704,6 +704,7 @@ class Collections:
 				#item.setUniqueIDs({'imdb': imdb, 'tmdb': tmdb})
 				setUniqueIDs={'imdb': imdb, 'tmdb': tmdb}
 				item.setProperty('IsPlayable', 'true')
+				item.setProperty('ForceResolvePlugin', 'true')
 				if is_widget: 
 					item.setProperty('isUmbrella_widget', 'true')
 					if self.hide_watched_in_widget:
